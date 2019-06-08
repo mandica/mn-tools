@@ -1,9 +1,15 @@
 # mn-tools
 
-Just misc masternode tools and scripts and stuff
+Checking script setup
+wget xxxx.sh
+wget clearlog.sh
 
-https://github.com/mandica/mn-tools/raw/master/del.sh
+chmod +x xxxx.sh
+sudo mv xxxx.sh /usr/local/bin
+crontab -e
 
-https://github.com/mandica/mn-tools/raw/master/daemonwatch.sh
+ADD LINE
+*/15 * * * * /usr/local/bin/xxxx.sh >>~/xxxx.log 2>&1
 
-*/15 * * * * /usr/local/bin/crownwatch.sh >>~/crownwatch.log 2>&1
+DELETE LOG FILE EVERY 2 DAYS
+0 0 */2 * * /usr/local/bin/clearlog.sh
